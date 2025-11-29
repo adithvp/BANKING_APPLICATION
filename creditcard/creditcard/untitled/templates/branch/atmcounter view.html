@@ -1,0 +1,39 @@
+
+{% extends 'branchindex.html' %}
+{% block body %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="get"><table class="table table-secondary">
+  <tr>
+    <td>#</td>
+    <td>customer name</td>
+    <td>card no</td>
+    <td>issue date</td>
+    <td>expiry date</td>
+    <td>pin</td>
+      <td colspan="2">&nbsp;</td>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{  loop.index  }}</td>
+    <td>{{ i.c_name  }}</td>
+    <td>{{ i.card_no }}&nbsp;</td>
+    <td>{{ i.issue_date }}</td>
+    <td>{{ i.expiry_date }}&nbsp;</td>
+    <td>{{ i.atmpin }}</td>
+  <td><a  class=" btn btn-primary" href="/updateatm/{{ i.card_id }}">UPDATE</a></td>
+
+  <td><a  class=" btn btn-danger" href="/atmdelete/{{ i.card_id }}">DELETE</a></td>
+
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

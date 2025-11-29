@@ -1,0 +1,49 @@
+{% extends 'branchindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="get"><table   class="table table-secondary">
+  <tr>
+    <td width="159"> Branch Name</td>
+    <td width="107">{{ data.Branch_name }}</td>
+  </tr>
+     <tr>
+    <td>Place</td>
+    <td>{{ data.Place }}</td>
+  </tr>
+      <tr>
+    <td>District</td>
+    <td>&nbsp;{{ data.District }}</td>
+  </tr>
+      <tr>
+    <td>IFSC code</td>
+    <td>&nbsp;{{ data.IFSC_code }}</td>
+  </tr>
+
+    <tr>
+    <td>Phone</td>
+    <td>&nbsp;{{ data.Phone }}</td>
+  </tr>
+
+  <tr>
+    <td>Email</td>
+    <td>&nbsp;{{ data.Email }}</td>
+  </tr>
+
+
+  <tr>
+    <td>Branch code</td>
+    <td>{{ data.branch_code }}&nbsp;</td>
+  </tr>
+
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="get"><table class="table table-secondary">
+  <tr>
+    <td width="10">#</td>
+    <td width="79">Customer name</td>
+    <td width="82">Complaint</td>
+    <td width="54">Date</td>
+    <td width="88">&nbsp;</td>
+  </tr>
+    {%  for i in data %}
+  <tr>
+    <td height="54">{{ loop.index }}&nbsp;</td>
+    <td>{{ i.c_name }}</td>
+    <td>&nbsp;{{ i.complaint }}</td>
+    <td>{{ i.date }}</td>
+    <td>
+              {% if i.replay=='pending' %}
+<a href="/sendreply/{{ i.complaint_id }}#rr"  class="btn btn-primary">Replay</a>
+        {% else %}
+    reply:{{ i.replay }}
+        <p>replydate:{{ i.replay_date }}</p>
+</td>
+        {% endif %}
+
+
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>
+{%  endblock %}

@@ -1,0 +1,40 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="get"><table class="table table-secondary">
+  <tr>
+    <td width="168">#</td>
+    <td width="168">Customer name</td>
+    <td width="168">Card number</td>
+    <td width="168">Issue date</td>
+    <td width="168">Expiry date</td>
+    <td width="168">pin no</td>
+
+    <td colspan="2">&nbsp;</td>
+    </tr>
+    {%  for i in data %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ i.c_name }}</td>
+    <td>{{ i.card_no }}</td>
+    <td>{{ i.issue_date }}</td>
+    <td>{{ i.expiry_date }}</td>
+    <td>{{ i.pin }}</td>
+
+
+    <td width="43"><a href="/approve/{{ i.card_id }}" class="btn btn-primary">Approve</a></td>
+     <td width="7"><a href="/reject/{{ i.card_id }}"  class="btn btn-danger">Reject</a></td>
+  </tr>
+    {%  endfor %}
+</table>
+</form>
+</body>
+</html>
+{% endblock %}
